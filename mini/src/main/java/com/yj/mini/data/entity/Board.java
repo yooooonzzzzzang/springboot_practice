@@ -1,12 +1,14 @@
 package com.yj.mini.data.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @Entity
-@Table(name= "board")
+@Table(name= "board_mini")
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,5 +19,8 @@ public class Board {
 
     @Column(nullable = false)
     private String description;
+
+    @ManyToOne
+    private SiteUser author;
 
 }
