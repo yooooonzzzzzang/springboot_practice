@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da94a06a-8312-4486-beba-d2f841a7659b" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hellojpa/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hellojpa/RoleType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hellojpa/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpabook/src/main/java/jpabook/jpashop/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpabook/src/main/java/jpabook/jpashop/domain/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpabook/src/main/java/jpabook/jpashop/domain/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpabook/src/main/java/jpabook/jpashop/domain/Delivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpabook/src/main/java/jpabook/jpashop/domain/DeliveryStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpabook/src/main/java/jpabook/jpashop/domain/DeliveryStatus.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +18,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -85,7 +76,7 @@
       <workItem from="1674381400451" duration="707000" />
       <workItem from="1674382120436" duration="4850000" />
       <workItem from="1674491781789" duration="1176000" />
-      <workItem from="1674532145389" duration="1448000" />
+      <workItem from="1674532145389" duration="3969000" />
     </task>
     <servers />
   </component>
