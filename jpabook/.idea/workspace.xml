@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d596cb9a-3d1c-4863-86bc-6964c155ca48" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../ex1-hello-jpa/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/src/main/java/hellojpa/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/src/main/java/hellojpa/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jpashop/src/main/java/jpabook/jpashop/Hello.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jpashop/src/main/java/jpabook/jpashop/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jpashop/src/main/java/jpabook/jpashop/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jpashop/src/main/java/jpabook/jpashop/MemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jpashop/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jpashop/src/main/resources/templates/hello.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jpashop/src/test/java/jpabook/jpashop/MemberRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpashop/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../jpashop/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpashop/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +84,7 @@
       <workItem from="1674363998139" duration="830000" />
       <workItem from="1674364880258" duration="6223000" />
       <workItem from="1674493835358" duration="3427000" />
-      <workItem from="1674666386949" duration="418000" />
+      <workItem from="1674666386949" duration="1699000" />
     </task>
     <servers />
   </component>
