@@ -10,11 +10,11 @@ spring:
       ddl-auto: create
     properties:
       hibernate:
-#        sout 으로 츌력
-#      show_sql: true
-      format_sql: true
+        format_sql: true
 logging.level:
-#  로그로출력
+##  로그로출력
   org.hibernate.SQL: debug
+#  여러줄
+  org.hibernate.type: trace
 # org.hibernate.type: trace #스프링 부트 2.x, hibernate5
 # org.hibernate.orm.jdbc.bind: trace #스프링 부트 3.x, hibernate6
