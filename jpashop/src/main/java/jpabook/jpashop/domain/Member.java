@@ -20,6 +20,7 @@ public class Member {
     @Embedded
     private Address address;
     // mappedBy : 나는 주인아니에요 연관관계 거울, 읽기전용
+    @JsonIgnore
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 }
