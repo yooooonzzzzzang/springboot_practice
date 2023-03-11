@@ -18,6 +18,7 @@ public class PrincipleDetails implements UserDetails {
     public PrincipleDetails(User user){
         this.user = user;
     }
+
     // 해당 User 의 권한을 리턴하는 곳
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -33,7 +34,7 @@ public class PrincipleDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return user.getPassword();
     }
 
     @Override
