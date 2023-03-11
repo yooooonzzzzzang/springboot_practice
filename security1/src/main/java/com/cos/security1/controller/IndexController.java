@@ -4,6 +4,8 @@ import com.cos.security1.model.User;
 import com.cos.security1.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,5 +60,16 @@ public class IndexController {
         user.setPassword(encPassword);
         userRepository.save(user); // 패스워드가 암호화 되지 않았기에 시큐리티로 로그인할 수 없음
         return "redirect:/loginForm";
+    }
+    @Secured("ROLE_ADMIN") // 특정메소드에 간단히 권한 설정 가능화
+    @GetMapping("/info")
+    public @ResponseBody String info(){
+        return "개인정보";
+    }
+
+    @PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')") // 여러개 권한 주고 싶을때 , 데이터 메소드 실행직전에 실행
+    @GetMapping("/data")
+    public @ResponseBody String data(){
+        return "데이터 정보";
     }
 }
