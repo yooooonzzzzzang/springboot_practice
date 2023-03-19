@@ -6,17 +6,33 @@ package com.cos.security1.config.auth;
 // User 오브젝트 타입 => UserDetails 타입 객체
 
 import com.cos.security1.model.User;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 // Security Session => Authentication 타입 => UserDetails(PrincipalDetails)
-public class PrincipleDetails implements UserDetails {
+@Data // get 접근 하기 위해
+public class PrincipleDetails implements UserDetails, OAuth2User {
     private User user; //콤포지션
+    private Map<String, Object> attributes;
+    // 일반 로그인
     public PrincipleDetails(User user){
         this.user = user;
+    }
+    // OAuth 로그인
+    public PrincipleDetails(User user, Map<String, Object> attributes){
+        this.user = user;
+        this.attributes = attributes;
+    }
+
+    @Override
+    public Map<String, Object> getAttributes() {
+        return attributes;
     }
 
     // 해당 User 의 권한을 리턴하는 곳
@@ -62,5 +78,10 @@ public class PrincipleDetails implements UserDetails {
         // 우리 사이트 에서 1년동안 회원이 로그인을 안하면 휴먼계정으로 전환
         // 현재시간 - 로그인 시간 => 1년 초과 return false
         return true;
+    }
+
+    @Override
+    public String getName() {
+        return null;
     }
 }
