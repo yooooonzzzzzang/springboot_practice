@@ -62,7 +62,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         String username = provider + "_" + providerId; //google_101010010101
         String password = bCryptPasswordEncoder.encode("겟인데어");
         String role = "ROLE_USER";
-
+*/
         User findUser = userRepository.findByUsername(username);
         if(findUser == null){
             findUser = User.builder()
@@ -76,7 +76,6 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
             userRepository.save(findUser);
         }
 
-*/
         // 회원가입 강제로 진행(User)
         return new PrincipleDetails(findUser, oauth2User.getAttributes());
     }
