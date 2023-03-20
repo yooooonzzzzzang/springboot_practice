@@ -46,11 +46,13 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                     new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
             // PrincipalDetailsService 의 loadUserByUsername() 함수가 실행된 후 정상이면 authentication 이 리턴됨
             // DB 에 있는 username 과 password가 일치한다
+            System.out.println("jwt 토큰 생성 완료");
             Authentication authentication = authenticationManager.authenticate(authenticationToken);
             // => 로그인이 되었다
             PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
             System.out.println("로그인 완료됨: "+principalDetails.getUser().getUsername());  // 로그인이 정상적으로 되었다는 것
             // authentication 객체가 session 영역에 저장해야하고 그 방법이 return 해주면 됨
+            return authentication;
             // 리턴의 이유는 권한 관리를 security 가 대신 해주기 때문에 편하려고 하는 것
             // 굳이 jwt 토큰을 사용하면서 세션을 만들 이유가 없음 근데 단지 권한 처리 때문에 session 에 넣어준다
         } catch (IOException e) {
