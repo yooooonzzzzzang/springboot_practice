@@ -82,7 +82,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
                     .build();
             userRepository.save(findUser);
         }else {
-            System.out.println("로그인 한 적 있습니다. 자동 회원 가입이 되어있습니다. ");
+            System.out.println("로그인 한 적 있습니다. D자동 회원 가입이 되어있습니다. ");
         }
 
         // 회원가입 강제로 진행(User)
