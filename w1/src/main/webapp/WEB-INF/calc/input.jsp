@@ -11,8 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-
-<form>
+<%--action: 어디로 method: 어떤 방식 전송--%>
+<form action="/calc/makeResult" method="post">
     <input type="number" name="num1">
     <input type="number" name="num2">
     <button type="submit" name="num1">SEND</button>
