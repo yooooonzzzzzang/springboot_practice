@@ -13,7 +13,7 @@ public enum TodoService {
     public void register(TodoDTO todoDTO){
         System.out.println("DEBUG................." + todoDTO);
     }
-
+    /* 리스트 조회 */
     public List<TodoDTO> getList(){
         List<TodoDTO> todoDTOS = IntStream.range(0,10).mapToObj(i -> {
             TodoDTO dto = new TodoDTO();
@@ -23,5 +23,16 @@ public enum TodoService {
             return dto;
         }).collect(Collectors.toList());
         return todoDTOS;
+    }
+
+    /* 번호 조회 */
+    public TodoDTO get(Long tno){
+        TodoDTO dto = new TodoDTO();
+        dto.setTno(tno);
+        dto.setTitle("Sample Todo");
+        dto.setDueDate(LocalDate.now());
+        dto.setFinished(true);
+
+        return dto;
     }
 }
