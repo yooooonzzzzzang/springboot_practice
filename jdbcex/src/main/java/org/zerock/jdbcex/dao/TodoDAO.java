@@ -19,7 +19,7 @@ public class TodoDAO {
         @Cleanup PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
         preparedStatement.setString(1, vo.getTitle());
-        preparedStatement.setDate(2, Date.valueOf(vo.getDueDate()));
+        preparedStatement.setDate(2, Date.valueOf(vo.getDueDate()));  //문자열로 표현된 날짜를 java.sql.Date 객체로 변환
         preparedStatement.setBoolean(3, vo.isFinished());
 
         preparedStatement.executeUpdate();
@@ -38,7 +38,7 @@ public class TodoDAO {
             TodoVO vo = TodoVO.builder()
                     .tno(resultSet.getLong("tno"))
                     .title(resultSet.getString("title"))
-                    .dueDate(resultSet.getDate("dueDate").toLocalDate())
+                    .dueDate(resultSet.getDate("dueDate").toLocalDate()) //Date 클래스 객체의 날짜 부분만 추출하여 LocalDate 객체로 변환
                     .finished(resultSet.getBoolean("finished"))
                     .build();
             list.add(vo);

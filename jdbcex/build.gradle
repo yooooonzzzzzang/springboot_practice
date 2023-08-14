@@ -14,15 +14,15 @@ ext {
     junitVersion = '5.9.1'
 }
 
-sourceCompatibility = '11'
-targetCompatibility = '11'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
 dependencies {
-    compileOnly('jakarta.servlet:jakarta.servlet-api:5.0.0')
+    compileOnly('javax.servlet:javax.servlet-api:4.0.1')
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
@@ -33,6 +33,18 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.28'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.0'
+
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.0.0'
+
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.2'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.2'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.17.2'
+
+    //test log4j2
+    testCompileOnly group:'org.projectlombok', name: 'lombok', version: '1.18.24'
+    testAnnotationProcessor group:'org.projectlombok', name: 'lombok', version: '1.18.24'
+    // jstl
+    implementation group: 'jstl', name: 'jstl', version: '1.2'
 }
 
 test {
