@@ -95,6 +95,11 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -204,7 +209,9 @@
       <updated>1690385942439</updated>
       <workItem from="1690385943862" duration="5316000" />
       <workItem from="1690812144278" duration="17326000" />
-      <workItem from="1691121111631" duration="12244000" />
+      <workItem from="1691121111631" duration="13960000" />
+      <workItem from="1691638991942" duration="1024000" />
+      <workItem from="1691935978861" duration="5724000" />
     </task>
     <servers />
   </component>
