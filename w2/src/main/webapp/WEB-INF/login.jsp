@@ -20,6 +20,7 @@
     <form action="/login" method="post" >
         <input type="text" name="mid">
         <input type="password" name="mpw">
+        <input type="checkbox" name="auto">
         <button type="submit">LOGIN</button>
     </form>
 
