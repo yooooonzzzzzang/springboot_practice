@@ -13,7 +13,7 @@
 </head>
 <body>
 <h1>Todo List</h1>
-
+<h2>${appName}</h2>
 <h2>${loginInfo.mname}</h2>
 <ul>
     <c:forEach var="dto" items="${dtoList}">
