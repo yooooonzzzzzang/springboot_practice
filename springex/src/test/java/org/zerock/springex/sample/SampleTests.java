@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+
 @Log4j2
 // JUnit5 버전에서 spring-test 를 이용하기 위함, 4버전은 @Runwith
 @ExtendWith(SpringExtension.class)
@@ -17,10 +20,21 @@ public class SampleTests {
     @Autowired // 스프링에서 사용하는 의존성 주입관련 어노테이션, 해당 타입의 빈이 존재하면 여기에 주입해주기를 원한다
     private SampleService sampleService;
 
+    @Autowired
+    private DataSource dataSource;
+
     @Test
     public void testService1(){
         log.info(sampleService);
         Assertions.assertNotNull(sampleService);
     }
 
+    @Test
+    public void testConnection() throws Exception{
+        Connection connection = dataSource.getConnection();
+        log.info(connection);
+        Assertions.assertNotNull(connection);
+
+        connection.close();
+    }
 }
