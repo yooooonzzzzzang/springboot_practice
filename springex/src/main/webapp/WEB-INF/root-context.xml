@@ -8,8 +8,8 @@
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
         <property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>
         <property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/webdb"></property>
-        <property name="username" value="webuser"></property>
-        <property name="password" value="webuser"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="root"></property>
         <property name="dataSourceProperties">
             <props>
                 <prop key="cachePrepStmts">true</prop>
