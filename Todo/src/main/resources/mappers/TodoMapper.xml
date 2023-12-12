@@ -8,9 +8,9 @@
         select now()
     </select>
 
-    <select id="insert" >
+    <insert id="insert" >
         insert into tbl_todo (title, dueDate, writer) values ( #{title}, #{dueDate}, #{writer})
-    </select>
+    </insert>
 
     <select id="selectAll" resultType="org.zerock.springex.domain.TodoVO">
         select * from tbl_todo order by tno desc
@@ -20,7 +20,12 @@
         select * from tbl_todo where tno = #{tno}
     </select>
 
-    <select id="delete" >
+    <delete id="delete" >
         delete from tbl_todo where tno = #{tno}
-    </select>
+    </delete>
+
+
+    <update id="update">
+        update tbl_todo set title = #{title}, dueDate = #{dueDate}, finished = #{finished} where tno = #{tno}
+    </update>
 </mapper>

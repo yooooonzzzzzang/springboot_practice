@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                         </form>
-
+                        <%--valid error 시--%>
                         <script>
 
                             const serverValidResult = {}
