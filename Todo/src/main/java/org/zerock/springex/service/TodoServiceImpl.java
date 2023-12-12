@@ -33,4 +33,10 @@ public class TodoServiceImpl implements TodoService{
                 .collect(Collectors.toList());
         return dtoList;
     }
+
+    @Override
+    public TodoDTO getOne(Long tno) {
+        TodoDTO todoDTO = modelMapper.map(todoMapper.selectOne(tno), TodoDTO.class);
+        return todoDTO;
+    }
 }
