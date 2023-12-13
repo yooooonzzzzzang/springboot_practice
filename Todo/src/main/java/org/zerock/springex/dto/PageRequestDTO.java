@@ -14,7 +14,7 @@ import javax.validation.constraints.Positive;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PageRequestDTO {
-    @Builder.Default
+    @Builder.Default //특정 필드 기본값 사용시 사용
     @Min(value = 1)
     @Positive
     private int page = 1;
