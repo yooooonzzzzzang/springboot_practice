@@ -80,9 +80,9 @@ public class TodoController {
 
         todoService.remove(tno);
         // 삭제 후 1페이지로 이동
-        redirectAttributes.addAttribute("page", 1);
-        redirectAttributes.addAttribute("size",pageRequestDTO.getSize());
-        return "redirect:/todo/list";
+//        redirectAttributes.addAttribute("page", 1);
+//        redirectAttributes.addAttribute("size",pageRequestDTO.getSize());
+        return "redirect:/todo/list"+ pageRequestDTO.getLink();
     }
 
     @PostMapping("/modify")
@@ -98,8 +98,9 @@ public class TodoController {
         log.info(todoDTO);
         todoService.modify(todoDTO);
         // 수정 후 목록 이동
-        redirectAttributes.addAttribute("page", pageRequestDTO.getPage());
-        redirectAttributes.addAttribute("size",pageRequestDTO.getSize());
+//        redirectAttributes.addAttribute("page", pageRequestDTO.getPage());
+//        redirectAttributes.addAttribute("size",pageRequestDTO.getSize());
+        redirectAttributes.addAttribute("tno", todoDTO.getTno());
         return "redirect:/todo/list";
     }
 }
