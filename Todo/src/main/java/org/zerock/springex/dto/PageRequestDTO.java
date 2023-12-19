@@ -43,7 +43,7 @@ public class PageRequestDTO {
     private LocalDate to;
 
     public boolean checkType(String type){
-        if(type == null || types.length == 0){
+        if(types == null || types.length == 0){
             return false;
         }
         // .anyMatch(types::equals): 스트림의 각 요소에 대해 주어진 조건(types::equals)이 하나라도 참이면 true를 반환
