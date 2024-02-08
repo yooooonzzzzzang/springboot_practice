@@ -70,4 +70,12 @@ public class BoardRepositoryTests {
         List<Board> todoList = result.getContent();
         todoList.forEach(board -> log.info(board));
     }
+
+//   querydsl test
+    @Test
+    public void testSearch1(){
+//        2 page order by bno desc
+        Pageable bno = PageRequest.of(3, 10, Sort.by("bno").descending());
+        boardRepository.search1(bno);
+    }
 }
