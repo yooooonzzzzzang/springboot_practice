@@ -11,9 +11,9 @@ public class RootConfig {
     public ModelMapper getMapper(){
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration()
-                .setFieldMatchingEnabled(true)
-                .setFieldAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PRIVATE)
-                .setMatchingStrategy(MatchingStrategies.LOOSE);
+                .setFieldMatchingEnabled(true) //필드이름 기준으로 매핑
+                .setFieldAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PRIVATE) // private 접근 가능
+                .setMatchingStrategy(MatchingStrategies.LOOSE); // 필드이름이 완전히 일치하지 않아도 매핑 시도
         return modelMapper;
     }
 }
