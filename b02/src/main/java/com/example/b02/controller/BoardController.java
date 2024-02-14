@@ -78,8 +78,16 @@ public class BoardController {
         boardService.modify(boardDTO);
         redirectAttributes.addFlashAttribute("result", "modified");
         redirectAttributes.addAttribute("bno", boardDTO.getBno());
-        // 수정완료시 검색, 페이징 조건 없이 이동
+        // 수정완료시 검색, 페이징 조건 없이 이ㅖ
         return "redirect:/board/read";
 
+    }
+
+    @PostMapping("/remove")
+    public String remove(Long bno, RedirectAttributes redirectAttributes){
+        log.info("remove post .... " + bno);
+        boardService.remove(bno);
+        redirectAttributes.addFlashAttribute("result", "removed");
+        return "redirect:/board/list";
     }
 }

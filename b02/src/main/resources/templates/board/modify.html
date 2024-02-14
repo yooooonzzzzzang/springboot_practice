@@ -75,7 +75,7 @@
   //   btn link event
   const link = [[${pageRequestDTO.getLink()}]]
   const formObj = document.querySelector("#f1")
-
+//modify
   document.querySelector(".modBtn").addEventListener("click", function(e){
     e.preventDefault()
     e.stopPropagation()
@@ -86,6 +86,22 @@
 
 
   }, false)
+// remove
+  document.querySelector(".removeBtn").addEventListener("click", function (e){
+    e.preventDefault()
+    e.stopPropagation()
 
+    formObj.action = `/board/remove?`
+    formObj.method ='post'
+    formObj.submit()
+  })
+// list
+  document.querySelector(".listBtn").addEventListener("click", function (e) {
+    e.preventDefault()
+    e.stopPropagation()
+
+    formObj.reset()
+    self.location = `/board/list?${link}`
+  }, false)
 
 </script>
