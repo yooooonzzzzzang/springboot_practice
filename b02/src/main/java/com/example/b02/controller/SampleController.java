@@ -1,5 +1,6 @@
 package com.example.b02.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,14 +15,16 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 // 기존 spring mvc 그대로 이용
-@RestController
+@Controller
 @Log4j2
 public class SampleController {
+    @Operation(summary = "hello")
     @GetMapping("/hello")
     public void hello(Model model){
         log.info("hello..........................");
         model.addAttribute("msg", "Hello world");
     }
+    @Operation(summary = "/ex/ex1")
     @GetMapping("/ex/ex1")
     public void ex1(Model model) {
         List<String> list = Arrays.asList("AAA", "BBB", "CCC","DDD");
