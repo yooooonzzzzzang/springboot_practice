@@ -32,6 +32,8 @@ public class ReplyRepositoryTests {
     }
 
     @Test
+/** @ToString exclude 안했을경우 -> test code는 한번만 실행되기때문에 연관된 board 객체는 가져올수없다
+ *  @Transactional 로 추가쿼리 실행 -> 하지만 @ToString exclude 사용 권장 */
 //    @Transactional
     public void testBoardReplies(){
         Long bno = 100L;
