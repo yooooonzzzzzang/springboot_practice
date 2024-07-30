@@ -14,7 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-@Controller
+@RestController
 @RequestMapping("/board")
 @Log4j2
 @RequiredArgsConstructor
@@ -89,4 +89,8 @@ public class BoardController {
         redirectAttributes.addFlashAttribute("result", "removed");
         return "redirect:/board/list";
     }
+
+
+
+
 }

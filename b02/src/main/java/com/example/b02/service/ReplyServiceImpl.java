@@ -1,14 +1,22 @@
 package com.example.b02.service;
 
 import com.example.b02.domain.Reply;
+import com.example.b02.dto.PageRequestDTO;
+import com.example.b02.dto.PageResponseDTO;
 import com.example.b02.dto.ReplyDTO;
 import com.example.b02.repository.ReplyRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -42,6 +50,22 @@ public class ReplyServiceImpl implements ReplyService{
     @Override
     public void remove(Long rno) {
         replyRepository.deleteById(rno);
+    }
+
+    @Override
+    public PageResponseDTO<ReplyDTO> getListOfBoard(Long bno, PageRequestDTO pageRequestDTO) {
+        PageRequest pageable = PageRequest.of(pageRequestDTO.getPage() <= 0 ? 0 :
+                        pageRequestDTO.getPage() - 1, pageRequestDTO.getSize(),
+                Sort.by("rno").ascending());
+
+        Page<Reply> result = replyRepository.listOfBoard(bno, pageable);
+        List<ReplyDTO> dtoList = result.getContent().stream().map(reply -> modelMapper.map(reply, ReplyDTO.class)).collect(Collectors.toList());
+
+        return PageResponseDTO.<ReplyDTO>withAll()
+                .pageRequestDTO(pageRequestDTO)
+                .dtoList(dtoList)
+                .total((int)result.getTotalElements())
+                .build();
     }
 
 }

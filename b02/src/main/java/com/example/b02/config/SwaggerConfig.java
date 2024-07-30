@@ -18,7 +18,7 @@ public class SwaggerConfig {
     @Bean
     public GroupedOpenApi commonApi(){
         return GroupedOpenApi.builder()
-                .pathsToMatch("/**/*")
+                .pathsToMatch("/**")
                 .pathsToExclude("/api/**")
                 .group("COMMON API")
                 .build();
